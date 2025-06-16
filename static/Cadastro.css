@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(14, 0, 31);
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    margin: 5% 30%;
+    background: rgb(44, 55, 88);
+    border: 3px solid rgb(144, 0, 211);
+    border-radius: 10px;
+}
+div h1{
+    margin: 3%;
+    font-size: 3rem;
+    color: white;
+}
+div form p{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+    margin: 5% 0 ;
+}
+div a{
+    border: 3px solid rgb(136, 32, 255);
+    border-radius: 10px;
+    background: rgb(13, 26, 63);
+    text-decoration: none;
+    color: white;
+    margin: 3%;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+a:hover, form input[type='submit']:hover{
+    background: rgb(45, 79, 180);
+    cursor: pointer;
+    color: white;
+}
+div form input{
+    margin: 3%;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 8px;
+    font-weight: bold;
+}
+div form input[type='submit']{
+    padding-left: 0;
+}

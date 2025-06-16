@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='Cadastro.css')}}">
+    <title>Página de Cadastro</title>
+</head>
+<body>
+    <div>
+        <h1>Cadastrar</h1>
+
+        <form action="" method="post">
+            <p>Nome de Usuário</p>
+            <input type="text" placeholder="usuário..." name="inputNome">
+            <p>Email</p>
+            <input type="email" placeholder="email..." name="inputEmail">
+            <p>Senha</p>
+            <input type="password" placeholder="senha..." name="inputSenha"><br>
+            <input type="submit" value="CADASTRAR" name="inputCadastra">
+        </form>
+
+        <a href="{{url_for('login')}}">Já Tenho Cadastro</a>
+    </div>
+</body>
+</html>
