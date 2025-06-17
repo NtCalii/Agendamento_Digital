@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from Database import db
-from Models import Usuarios
+from Models import Usuarios, Horarios
 import hashlib
+from datetime import date, time
 
 app = Flask(__name__)
 app.secret_key = "senha_secreta"
@@ -58,10 +59,35 @@ def logout():
     logout_user()
     return redirect(url_for("login"))
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 @login_required
 def home():
-    return render_template("Home.html")
+    if request.method == "GET":
+        return render_template("Home.html")
+    elif request.method == "POST":
+        nome_cliente = request.form["inputNomeCliente"]
+        horario_str = request.form["inputHorario"]
+        data_str = request.form["inputData"]
+        usuario_id = current_user.id
+
+        try:
+            # Convertendo a data
+            ano, mes, dia = map(int, data_str.split('-'))
+            data_convertida = date(ano, mes, dia)
+
+            # Convertendo o horário
+            hora, minuto = map(int, horario_str.split(':'))
+            horario_convertido = time(hora, minuto)
+
+        except (ValueError, AttributeError):
+            flash("Formato de data/horário inválido!", "error")
+            return redirect(url_for("home"))
+
+        novo_agendamento = Horarios(nome_cliente=nome_cliente, horario=horario_convertido, usuario_id=usuario_id, data=data_convertida)
+        db.session.add(novo_agendamento)
+        db.session.commit()
+
+        return redirect(url_for("home"))
 
 if __name__ == "__main__":
     with app.app_context():

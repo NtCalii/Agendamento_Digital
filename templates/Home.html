@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='Home.css')}}">
     <title>Home</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <h2>Olá, {{current_user.nome}}!</h2>
-    <a href="{{url_for('logout')}}">Sair</a>
+    <div class="principal">
+        <header>
+            <h1>Olá, {{current_user.nome}}!</h1>
+            <a href="{{url_for('logout')}}">Sair da Conta</a>
+        </header>
+
+        <form action="" method="post">
+            <input type="date" name="inputData">
+            <input type="time" name="inputHorario">
+            <input type="text" name="inputNomeCliente" placeholder="nome do cliente...">
+            <input type="submit" name="inputAgendado" value="Adicionar horário">
+        </form>
+
+        <form action="" method="post">
+            
+        </form>
+    </div>
 </body>
 </html>

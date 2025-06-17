@@ -40,9 +40,9 @@ div a{
     font-size: 1.3rem;
 }
 a:hover, form input[type='submit']:hover{
-    background: rgb(45, 79, 180);
+    background: rgb(187, 204, 255);
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 div form input{
     margin: 3%;
