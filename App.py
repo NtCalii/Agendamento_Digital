@@ -62,8 +62,10 @@ def logout():
 @app.route("/", methods=["GET", "POST"])
 @login_required
 def home():
+    agendamentos = db.session.query(Horarios).filter_by(usuario_id=current_user.id).all()
+
     if request.method == "GET":
-        return render_template("Home.html")
+        return render_template("Home.html", agendamentos=agendamentos)
     elif request.method == "POST":
         nome_cliente = request.form["inputNomeCliente"]
         horario_str = request.form["inputHorario"]
@@ -86,8 +88,9 @@ def home():
         novo_agendamento = Horarios(nome_cliente=nome_cliente, horario=horario_convertido, usuario_id=usuario_id, data=data_convertida)
         db.session.add(novo_agendamento)
         db.session.commit()
-
-        return redirect(url_for("home"))
+    
+        agendamentos = db.session.query(Horarios).filter_by(usuario_id=current_user.id).all()
+        return render_template("Home.html", agendamentos=agendamentos)
 
 if __name__ == "__main__":
     with app.app_context():

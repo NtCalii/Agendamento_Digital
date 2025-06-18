@@ -13,15 +13,31 @@
             <a href="{{url_for('logout')}}">Sair da Conta</a>
         </header>
 
-        <form action="" method="post">
+        <form action="" method="post" class="form1">
             <input type="date" name="inputData">
             <input type="time" name="inputHorario">
             <input type="text" name="inputNomeCliente" placeholder="nome do cliente...">
             <input type="submit" name="inputAgendado" value="Adicionar horário">
         </form>
 
-        <form action="" method="post">
+        <form action="" method="post" class="form2">
+            <h2>Meus Agendamentos</h2>
             
+                {% if agendamentos %}
+                    {% for agendamento in agendamentos %}
+                        <div class="agenda">
+                            <p>
+                                Data: {{ agendamento.data.strftime('%d/%m/%Y') }} |
+                                Horário: {{ agendamento.horario.strftime('%H:%M') }} |
+                                Cliente: {{ agendamento.nome_cliente }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="agenda">
+                        <p>Nenhum agendamento encontrado.</p>
+                    </div>
+                {% endif %}
         </form>
     </div>
 </body>
