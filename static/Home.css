@@ -89,8 +89,7 @@ input[name="inputData"]{
 }
 
 [name="inputAgendado"]:hover{
-    background: rgb(187, 204, 255);
-    color: rgb(0, 0, 0);
+    background: rgb(125, 255, 125);
 }
 
 .form2{
@@ -146,4 +145,15 @@ h2{
 .form2::-webkit-scrollbar-thumb{
     background-color: rgb(136, 32, 255);
     border-radius: 10px;
+}
+input[name="inputRemover"]{
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 7px 0 0 0;
+    cursor: pointer;
+    border: none;
+}
+input[name="inputRemover"]:hover{
+    background: rgb(255, 65, 65);
 }

@@ -31,6 +31,8 @@
                                 Horário: {{ agendamento.horario.strftime('%H:%M') }} |
                                 Cliente: {{ agendamento.nome_cliente }}
                             </p>
+                            <input type="hidden" name="agendamento_id" value="{{ agendamento.id }}">
+                            <input type="submit" name="inputRemover" value="Remover horário">
                         </div>
                     {% endfor %}
                 {% else %}

@@ -67,6 +67,21 @@ def home():
     if request.method == "GET":
         return render_template("Home.html", agendamentos=agendamentos)
     elif request.method == "POST":
+        if "inputRemover" in request.form:
+            agendamento_id = request.form["agendamento_id"]
+            agendamento = Horarios.query.filter_by(id=agendamento_id, usuario_id=current_user.id).first()
+
+            if agendamento:
+                db.session.delete(agendamento)
+                db.session.commit()
+                flash("Agendamento removido com sucesso!", "success")
+            else:
+                flash("Agendamento não encontrado ou não pertence a você", "error")
+                
+            agendamentos = db.session.query(Horarios).filter_by(usuario_id=current_user.id).all()
+            return render_template("Home.html", agendamentos=agendamentos)
+
+
         nome_cliente = request.form["inputNomeCliente"]
         horario_str = request.form["inputHorario"]
         data_str = request.form["inputData"]
