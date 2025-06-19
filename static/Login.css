@@ -55,3 +55,98 @@ div form input{
 div form input[type='submit']{
     padding-left: 0;
 }
+
+/* medias */
+@media (max-width: 1120px) {
+    div {
+        width: 60%;
+        margin: 8% auto;
+    }
+
+    div h1 {
+        font-size: 2.5rem;
+    }
+
+    div form p {
+        font-size: 1.5rem;
+    }
+
+    div form input {
+        width: 250px;
+        height: 40px;
+    }
+
+    div a {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+}
+@media (max-width: 1024px) {
+    div {
+        width: 70%;
+        margin: 8% auto;
+    }
+
+    div h1 {
+        font-size: 2.2rem;
+    }
+
+    div form p {
+        font-size: 1.4rem;
+    }
+
+    div form input {
+        width: 220px;
+        height: 38px;
+    }
+
+    div a {
+        font-size: 1.1rem;
+        padding: 5px 10px;
+    }
+}
+@media (max-width: 767px) {
+    div {
+        width: 90%;
+        margin: 6% auto;
+    }
+
+    div h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    div form p {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    div form input {
+        width: 80%;
+        height: 36px;
+    }
+
+    div a {
+        font-size: 1rem;
+        padding: 5px 10px;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    div h1 {
+        font-size: 1.8rem;
+    }
+
+    div form p {
+        font-size: 1.2rem;
+    }
+
+    div form input {
+        width: 90%;
+        height: 34px;
+    }
+
+    div a {
+        font-size: 0.9rem;
+    }
+}

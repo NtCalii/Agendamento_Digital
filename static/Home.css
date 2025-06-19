@@ -157,3 +157,137 @@ input[name="inputRemover"]{
 input[name="inputRemover"]:hover{
     background: rgb(255, 65, 65);
 }
+
+
+/* medias */
+@media (max-width: 1120px) {
+    header h1{
+        font-size: 1.8rem;
+    }
+    header a {
+        font-size: 1rem;
+        padding: 4px;
+    }
+    input[name="inputData"],
+    input[name="inputHorario"],
+    input[name="inputNomeCliente"],
+    input[name="inputAgendado"] { 
+        font-size: 0.7rem;
+        width: 22%;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .form2 p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .principal {
+        width: 70%;
+        margin: 5% auto;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header a {
+        font-size: 1rem;
+        padding: 4px;
+    }
+
+    .form1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    input[name="inputData"],
+    input[name="inputHorario"],
+    input[name="inputNomeCliente"],
+    input[name="inputAgendado"] {
+        width: 45%; 
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .form2 p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Celulares grandes (até 767px) */
+@media (max-width: 767px) {
+    .principal {
+        width: 90%;
+        margin: 5% auto;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    header a {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    .form1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    input[name="inputData"],
+    input[name="inputHorario"],
+    input[name="inputNomeCliente"],
+    input[name="inputAgendado"] {
+        width: 80%;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .form2 p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Celulares muito pequenos (até 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header a {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .form2 p {
+        font-size: 1rem;
+    }
+}
